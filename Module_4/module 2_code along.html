@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combined Sample Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            background-color: rgb(47, 104, 211);
+            padding: 10px;
+        }
+
+        p {
+            font-family: monospace;
+            font-size: 18px;
+            color: RGB(0, 0, 255); 
+        }
+
+        #greeting {
+            font-size: 24px;
+            color: darkblue;
+            border-bottom: 2px solid rgb(40, 40, 145);
+        }
+
+        .highlight {
+            background-color: rgb(163, 45, 128);
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .save-recipe {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>This is Heading 1</h1>
+    <p>This is an example of using an internal stylesheet. By defining CSS rules in the style element, we can apply consistent styling.</p>
+
+    <hr>
+
+    <h3>Inline Styling & Spans</h3>
+    <p>Here is a normal paragraph.</p>
+    <p style="background-color: rgb(230, 171, 63); color: white; font-weight: bold; padding: 10px;">
+        This paragraph has inline styling applied to it.
+    </p>
+    <p>This is a <span style="color: blue; font-weight: bold;">blue</span> span text inside a paragraph.</p>
+
+    <hr>
+
+    <h3>ID and Class Selectors</h3>
+    <p id="greeting">Hello, world! (This uses an ID selector)</p>
+    <p class="highlight">This paragraph has the 'highlight' class applied to it.</p>
+    <p class="highlight">Another paragraph with the 'highlight' class.</p>
+
+    <hr>
+
+    <h3>Images and Interactive Elements</h3>
+    <div style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">
+        <img src="https://via.placeholder.com/50/FF0000" alt="Rect 1">
+        <img src="https://via.placeholder.com/50/00FF00" alt="Rect 2">
+        <img src="https://via.placeholder.com/50/0000FF" alt="Rect 3">
+    </div>
+
+    <button onclick="alert('Hello, World!')">Click Me for Alert</button>
+
+    <hr>
+
+    <h3>Data Attributes (Recipe List)</h3>
+    <ul>
+        <li data-recipe-id="001">
+            <h2>Spaghetti with Meatballs</h2>
+            <p>A classic Italian dish that's perfect for a cozy night in.</p>
+            <button class="save-recipe">Save Recipe</button>
+        </li>
+        <li data-recipe-id="002">
+            <h2>Chicken Tikka Masala</h2>
+            <p>A flavorful Indian curry that's sure to please.</p>
+            <button class="save-recipe">Save Recipe</button>
+        </li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha & Mainboards | Danica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --matcha-green: #9dc183;
+            --light-sage: #E8F0E3; 
+            --warm-yellow: #FFD54F;
+            --off-white: #FCFBF4;
+            --deep-black: #1A1A1A;
+            --text-gray: #333333;
+            --shadow-color: rgba(26, 26, 26, 0.2);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--matcha-green);
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--light-sage);
+            color: var(--deep-black); 
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--warm-yellow);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif; 
+            margin: 0;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0px var(--shadow-color);
+        }
+
+        header p {
+            font-weight: 700;
+            margin-top: 15px;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        section {
+            background: var(--off-white);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--deep-black);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--deep-black);
+            border-bottom: 3px solid var(--matcha-green);
+            display: inline-block;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .highlight {
+            background-color: var(--warm-yellow);
+            color: var(--deep-black);
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .caffeine-corner {
+            background-color: #f0f4ef; 
+            padding: 20px;
+            border-radius: 10px;
+            font-style: italic;
+            border: 1px dashed var(--matcha-green);
+            text-align: center;
+        }
+
+        a {
+            color: #4a6d34;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--warm-yellow);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: var(--warm-yellow);
+            color: var(--deep-black);
+        }
+
+        /* The .bio::first-line styling was removed to keep text normal */
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--light-sage);
+            color: var(--text-gray);
+            margin-top: 40px;
+            border-top: 5px solid var(--warm-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <h1>DANICA T. GUARIÑO</h1>
+        <p>3rd Year Computer Engineering Student | T.I.P. QC Cubao</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="bio">Hello! I am a 3rd-year Computer Engineering student at the Technological Institute of the Philippines. When I'm not studying circuits or code, you'll likely find me on the volleyball court or lost in a good book. I thrive on Quality Time and love exploring the balance between technology and creativity.</p>
+        </section>
+
+        <section id="media">
+            <h2>Movies & Music</h2>
+            <p>I am a huge fan of <strong>RomComs, Horror, Thrillers, and Drama</strong>. My playlists are a mix of everything from OPM to K-Pop.</p>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 12px;">🎵 <strong>Top Artists:</strong> Cup Of Joe, BTS, Wave to Earth, Maroon 5</li>
+                <li>📖 <strong>Current Reads:</strong> <em>The Seven Husbands of Evelyn Hugo</em>, <em>One Last Stop</em>, and <em>The Seven Year Slip</em>.</li>
+            </ul>
+        </section>
+
+        <section id="cravings">
+            <h2>The Caffeine & Spice Corner</h2>
+            <div class="caffeine-corner">
+                <p>My daily fuel consists of a huge addiction to <span class="highlight" style="background-color: var(--matcha-green); color: white;">Matcha</span> flavored treats and Iced Coffee. I also have a major love for spicy foods!</p>
+            </div>
+        </section>
+
+        <section id="favorites">
+            <h2>Personal Preferences</h2>
+            <p><strong>Love Languages:</strong> Quality Time, Physical Touch, Words of Affirmation</p>
+            <p><strong>Colors:</strong> Warm Yellow, Black, Matcha Green, and White</p>
+        </section>
+    </main>
+
+    <footer>
+        <p style="font-weight: bold; font-family: 'Playfair Display', serif; font-size: 1.2rem;">Built with &hearts; by Danica | 2026</p>
+        <p>Contact: <a href="mailto:qdtguarino@tip.edu.ph">qdtguarino@tip.edu.ph</a></p>
+    </footer>
+
+</body>
+</html>

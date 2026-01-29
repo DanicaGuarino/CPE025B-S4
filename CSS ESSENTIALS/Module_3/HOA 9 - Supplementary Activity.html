@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the perfect harmony of green tea with Matcha: Whisked & Baked, featuring artisan recipes for drinks and desserts.">
+    <title>Matcha: Whisked & Baked | Product Showcase</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding-top: 100px; /* Space for fixed header */
+            padding-bottom: 60px; /* Space for fixed footer */
+            line-height: 1.6;
+        }
+
+        /* Fixed Header */
+        header {
+            /* Updated to a high-quality Matcha whisking image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&q=80&w=1600') no-repeat center center;
+            background-size: cover;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #8dbd69;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #8dbd69;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Product Card Styles */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .product {
+            width: 300px;
+            padding: 0;
+            border: 1px solid #333;
+            background-color: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            border-color: #8dbd69;
+        }
+
+        .product-image {
+            position: relative;
+            height: 220px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #8dbd69;
+            color: #121212;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .badge.bestseller {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .badge.new-release {
+            background-color: #00bcd4;
+            color: #fff;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h2 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* Specs Table Styles */
+        .specs-section {
+            margin: 40px 0;
+        }
+
+        .product-specs {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+        }
+
+        .product-specs th, .product-specs td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .product-specs th {
+            background-color: #2d5a27;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .product-specs tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            padding: 60px 0;
+            background-color: #0f0f0f;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .contact-form form {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .contact-form fieldset {
+            border: 1px solid #2d5a27;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .contact-form legend {
+            color: #8dbd69;
+            font-weight: bold;
+            padding: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        .contact-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #8dbd69;
+            color: #121212;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .contact-form button:hover {
+            background-color: #b1d896;
+        }
+
+        /* Fixed Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+        }
+
+        blockquote {
+            border-left: 4px solid #8dbd69;
+            background: #1a1a1a;
+            padding: 15px;
+            font-style: italic;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Matcha: Whisked & Baked</h1>
+    </header>
+
+    <main>
+        <section class="product-container">
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0343-I-1.jpg" alt="Iced Matcha Latte">
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="product-info">
+                    <h2>Iced Matcha Latte</h2>
+                    <p>Beat the heat with a vibrant splash of emerald. Refreshing, caffeinated, and served over crystal-clear ice.</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2021/07/Matcha-Gateau-au-Chocolat-9793-I-1.jpg" alt="Matcha Gateau au Chocolat">
+                    <span class="badge new-release">New Release</span>
+                </div>
+                <div class="product-info">
+                    <h2>Gateau au Chocolat</h2>
+                    <p>A velvety green tea melt. Dense, fudgy, and made with premium white chocolate and Uji matcha.</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2020/12/Matcha-Basque-Burnt-Cheesecake-2586-I-2.jpg" alt="Matcha Basque Cheesecake">
+                    <span class="badge">Artisan Bake</span>
+                </div>
+                <div class="product-info">
+                    <h2>Basque Cheesecake</h2>
+                    <p>Defiantly burnt on the outside, molten on the inside. A caramelized take on traditional cheesecake.</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2019/11/Matcha-Tiramisu-6372-I-2.jpg" alt="Matcha Tiramisu">
+                    <span class="badge">Limited Edition</span>
+                </div>
+                <div class="product-info">
+                    <h2>Matcha Tiramisu</h2>
+                    <p>An elegant East-West fusion. Ladyfingers soaked in ceremonial matcha layered with airy mascarpone cream.</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.justonecookbook.com/wp-content/uploads/2025/12/Matcha-Latte-4598-I-2-1200x800.jpg" alt="Hot Matcha Latte">
+                    <span class="badge">Classic</span>
+                </div>
+                <div class="product-info">
+                    <h2>Hot Matcha Latte</h2>
+                    <p>A warm hug in a mug. Experience the perfect balance of earthy tea and velvet micro-foam.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="specs-section">
+            <h2 style="text-align: center; color: #8dbd69;">Premium Ingredient Specs</h2>
+            <table class="product-specs">
+                <thead>
+                    <tr>
+                        <th>Core Element</th>
+                        <th>Sourcing & Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Matcha Origin</td>
+                        <td>Stone-ground Uji, Japan</td>
+                    </tr>
+                    <tr>
+                        <td>Water Temp</td>
+                        <td>80°C (Ideal for no bitterness)</td>
+                    </tr>
+                    <tr>
+                        <td>Dairy Options</td>
+                        <td>Oat, Whole, or 2% Milk</td>
+                    </tr>
+                    <tr>
+                        <td>Sweetener</td>
+                        <td>Organic Cane Sugar or Simple Syrup</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <blockquote>
+            "Experience the perfect balance of earthy stone-ground tea and velvet micro-foam for a morning that starts with clarity."
+            <br><small>— Danica Guariño, The Matcha Expert</small>
+        </blockquote>
+
+        <div class="contact-form">
+            <form action="#">
+                <fieldset>
+                    <legend>Wholesale Inquiries</legend>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    <button type="submit">Request Catalogue</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Matcha: Whisked & Baked. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

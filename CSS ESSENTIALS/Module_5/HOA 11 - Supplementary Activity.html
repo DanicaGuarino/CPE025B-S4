@@ -3,74 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Danica Guariño's Portfolio</title>
     <style>
-        /* Base styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        /* Warm Aesthetic Variables */
+        :root {
+            --primary-dark: #1e272e;    /* Deep Charcoal */
+            --warm-accent: #b33939;     /* Muted Copper */
+            --warm-gold: #c56e33;       /* Aged Gold */
+            --bg-sand: #f5f0e1;         /* Warm Sand Background */
+            --card-ivory: #ffffff;
+            --text-main: #2f3542;
+            --text-muted: #57606f;
         }
 
+        body {
+            font-family: 'Segoe UI', serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-sand);
+            color: var(--text-main);
+        }
+
+        /* Sophisticated Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
+            background-color: var(--primary-dark);
+            color: var(--bg-sand);
+            padding: 30px 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: var(--card-ivory);
+            margin: 0;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         nav a {
-            color: white;
+            color: var(--bg-sand);
             text-decoration: none;
-            margin: 0 10px;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            opacity: 0.8;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: var(--warm-gold);
+            opacity: 1;
+        }
+
+        main {
+            padding: 60px 20px;
+            /* Subtle grain effect or gradient to make it look "paper-like" */
+            background: linear-gradient(180deg, var(--bg-sand) 0%, #ede6d4 100%);
+            min-height: 85vh;
         }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1050px;
+            margin: 0 auto;
         }
 
+        /* Aesthetic Card Styling */
         .project-card {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            background-color: var(--card-ivory);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--warm-accent);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            /* Desaturate slightly for the aesthetic look */
+            filter: grayscale(20%) sepia(10%);
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-family: Georgia, serif; /* Mixed fonts for aesthetic feel */
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        li {
+            font-size: 0.75rem;
+            color: var(--warm-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        li::before {
+            content: "◆"; /* Diamond bullet for a more unique look */
+            margin-right: 6px;
+            font-size: 0.7rem;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .cta-link {
+            color: var(--warm-accent);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--warm-accent);
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-link:hover {
+            color: var(--primary-dark);
+            border-color: var(--primary-dark);
         }
 
         @media (max-width: 768px) {
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav a {
-                margin: 5px 0;
-            }
+            .projects { grid-template-columns: 1fr; }
+            header { flex-direction: column; padding: 25px; text-align: center; }
+            nav { margin-top: 20px; }
+            nav a { margin: 0 10px; }
         }
 
         footer {
-            background-color: #333;
-            color: white;
+            background-color: var(--primary-dark);
+            color: #7f8c8d;
             text-align: center;
-            padding: 10px 20px;
+            padding: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>My Portfolio</h1>
+        <h1>Danica Guariño's Portfolio | CSS Essentials</h1>
         <nav>
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -78,24 +199,68 @@
             <a href="#">Contact</a>
         </nav>
     </header>
+
     <main>
         <section class="projects">
             <div class="project-card">
-                <h2>Project 1</h2>
-                <p>Description of project 1.</p>
+                <img src="Module 1 - CSS.jpg" alt="Module 1 Project">
+                <div class="card-content">
+                    <h2>Module 01: CSS Basics</h2>
+                    <p>This module introduces CSS fundamentals, including syntax, selectors, and external stylesheets. It covers the essential principles of the CSS cascade, specificity, and inheritance.</p>
+                    <ul>
+                        <li>Syntax</li>
+                        <li>The Cascade</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="project-card">
-                <h2>Project 2</h2>
-                <p>Description of project 2.</p>
+                <img src="Module 2 - CSS.jpg" alt="Module 2 Project">
+                <div class="card-content">
+                    <h2>Module 02: Properties and Values</h2>
+                    <p>This module focuses on visual styling, covering color models, backgrounds, and text formatting. It establishes a foundation for controlling element appearance and hyperlink behavior.</p>
+                    <ul>
+                        <li>Color Models</li>
+                        <li>Text Styling</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="project-card">
-                <h2>Project 3</h2>
-                <p>Description of project 3.</p>
+                <img src="Module 3 - CSS.jpg" alt="Module 3 Project">
+                <div class="card-content">
+                    <h2>Module 03: The Box Model</h2>
+                    <p>This module explores the core Box Model concepts like padding, margins, and borders. It also demonstrates how to style interactive forms, tables, and manage element positioning.</p>
+                    <ul>
+                        <li>Box Model</li>
+                        <li>Forms & Tables</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="Module 4 - CSS.jpg" alt="Module 4 Project">
+                <div class="card-content">
+                    <h2>Module 04: Floats and Media Queries</h2>
+                    <p>This module introduces layout techniques, focusing on creating multi-column designs using floats. It emphasizes building responsive, adaptable layouts that function across different devices.</p>
+                    <ul>
+                        <li>CSS Floats</li>
+                        <li>Responsive</li>
+                    </ul>
+                </div>
             </div>
         </section>
+
+        <section class="cta-section">
+            <h2>Let's Connect</h2>
+            <p>I am always open to discussing new projects and creative opportunities.</p>
+            <a href="mailto:info@myportfolio.com" class="cta-link">Reach Out via Email</a>
+        </section>
     </main>
+
     <footer>
-        <p>© 2024 My Portfolio</p>
+        <p>© 2026 • Guariño's Portfolio</p>
     </footer>
+
 </body>
 </html>

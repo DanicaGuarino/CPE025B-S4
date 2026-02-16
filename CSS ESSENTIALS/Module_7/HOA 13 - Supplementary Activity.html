@@ -3,99 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Launch</title>
+    <title>The Sideline Critic | Media Reviews</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .hero-section {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 100px 0;
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        .vibe-quote {
+            font-style: italic;
+            color: #6c757d;
+            border-left: 3px solid #dee2e6;
+            padding-left: 10px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Tech Solutions</a>
+            <a class="navbar-brand fw-bold" href="#">THE SIDELINE CRITIC</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Latest Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Archives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About the Critic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Suggest a Title</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid bg-light text-center py-5">
-        <h1 class="display-4">Welcome to Tech Solutions</h1>
-        <p class="lead">Your partner in technology solutions</p>
-        <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+    <div class="container-fluid hero-section text-center">
+        <h1 class="display-3 fw-bold">The Sideline Critic: Outside the Lines</h1>
+        <p class="lead text-secondary">Where the mainstream ends and the real conversation begins.</p>
+        <a href="#latest" class="btn btn-outline-light btn-lg mt-3">Read Latest</a>
     </div>
 
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Our Services</h2>
+    <div class="container my-5" id="latest">
+        <h2 class="text-center mb-5 fw-bold">Latest Reviews</h2>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://edube.org/uploads/media/default/0001/04/service1.jpg" class="card-img-top" alt="Service 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Service 1</h5>
-                        <p class="card-text">Description of service 1.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWN8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Soundtrack Review">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary mb-2 align-self-start">Music</span>
+                        <h5 class="card-title fw-bold">Beneath the Surface</h5>
+                        <p class="card-text mb-0 text-muted small">Deconstructing the production, the passion, and the pulse.</p>
+                        <p class="vibe-quote">"It’s not just what you hear; it’s what you feel."</p>
+                        <a href="#" class="btn btn-dark mt-auto">Read Review</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://edube.org/uploads/media/default/0001/04/service2.jpg" class="card-img-top" alt="Service 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Service 2</h5>
-                        <p class="card-text">Description of service 2.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Novel Review">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-secondary mb-2 align-self-start">Literature</span>
+                        <h5 class="card-title fw-bold">Between the Lines</h5>
+                        <p class="card-text mb-0 text-muted small">Unlocking the hidden truths buried in modern prose.</p>
+                        <p class="vibe-quote">"The story is only half of the experience."</p>
+                        <a href="#" class="btn btn-dark mt-auto">Read Review</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://edube.org/uploads/media/default/0001/04/service3.jpg" class="card-img-top" alt="Service 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Service 3</h5>
-                        <p class="card-text">Description of service 3.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://plus.unsplash.com/premium_photo-1723867528308-539f3936c339?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUzfHxtb3ZpZXN8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Film Review">
+                    <div class="card-body d-flex flex-column">
+                        <span class="badge bg-danger mb-2 align-self-start">Film of the Week</span>
+                        <h5 class="card-title fw-bold">Beyond the Frame</h5>
+                        <p class="card-text mb-0 text-muted small">Exploring the cinematic soul that lingers after the credits roll.</p>
+                        <p class="vibe-quote">"The best movies happen in your head once the screen goes dark."</p>
+                        <a href="#" class="btn btn-dark mt-auto">Read Review</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Contact Us</h2>
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Your Name">
+    <div class="container my-5 py-5 border-top">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-2 fw-bold">Across the Desk</h2>
+                <p class="text-muted text-center mb-0 italic">Submit your leads for the next cultural audit.</p>
+                <p class="vibe-quote text-center border-start-0 mb-4">"Your perspective is the missing piece."</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="suggestionType" class="form-label">Category</label>
+                        <select class="form-select" id="suggestionType">
+                            <option selected>Choose...</option>
+                            <option value="1">Book: Between the Lines </option>
+                            <option value="2">Movie: Beyond the Frame </option>
+                            <option value="3">Album/Soundtrack: Beneath the Surface </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Recommendation</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Tell me why I should check it out..."></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Send Suggestion</button>
+                    </div>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Your Email">
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 
-    <footer class="bg-light text-center py-4">
-        <p>© 2024 Tech Solutions</p>
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0 opacity-75">© 2026 The Sideline Critic. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

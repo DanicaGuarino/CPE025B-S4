@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass Essentials</title>
+    <style>
+        /* Compiled CSS from Sass */
+
+        /* Base styles */
+        body {
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          color: #007bff;
+          margin: 0;
+          padding: 0;
+        }
+
+        /* Header and Footer styles */
+        .header, .footer {
+          background-color: #cce5ff;
+          padding: 20px;
+          text-align: center;
+        }
+
+        .header h1, .footer p {
+          font-size: 2em;
+        }
+
+        /* Main content styles */
+        main {
+          padding: 20px;
+        }
+
+        main .about h2 {
+          font-size: 1.5em;
+        }
+
+        main .about p {
+          font-size: 16px;
+        }
+
+        main .features h2 {
+          font-size: 1.5em;
+        }
+
+        main .features .feature-list {
+          list-style-type: disc;
+          padding-left: 20px;
+        }
+
+        main .features .feature-list li {
+          border-radius: 5px; 
+          padding: 5px;
+          margin-bottom: 5px;
+          background-color: #e6f2ff; 
+        }
+
+        main .example h2 {
+          font-size: 1.5em;
+        }
+
+        main .example .example-text {
+          border-radius: 10px; 
+          padding: 10px;
+          background-color: #e6f2ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Sass Essentials</h1>
+    </header>
+    <main>
+        <section class="about">
+            <h2>About Sass</h2>
+            <p>Sass makes CSS more powerful with features like variables, mixins, and nesting.</p>
+        </section>
+        <section class="features">
+            <h2>Features</h2>
+            <ul class="feature-list">
+                <li>Variables</li>
+                <li>Mixins</li>
+                <li>Nesting</li>
+            </ul>
+        </section>
+        <section class="example">
+            <h2>Example</h2>
+            <p class="example-text">This text will be styled using Sass.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2035 Sass Essentials</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+body {
+  font-family: "Optima", "Georgia", serif;
+  background-color: #fdfaf5;
+  color: #283618;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.header {
+  background-color: #bc6c25;
+  color: #fdfaf5;
+  padding: 60px 20px;
+  text-align: center;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 20px;
+  background: #ffffff;
+  margin: 0;
+  border-bottom: 1px solid rgba(212, 163, 115, 0.2);
+}
+.navigation-menu li {
+  margin: 0 20px;
+}
+.navigation-menu li a {
+  text-decoration: none;
+  color: #bc6c25;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.navigation-menu li a:hover {
+  color: #d4a373;
+}
+
+.content {
+  display: flex;
+  max-width: 1000px;
+  margin: 40px auto;
+  gap: 30px;
+  padding: 0 20px;
+}
+.content .sidebar {
+  flex: 1;
+}
+.content .sidebar .challenge-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.content .sidebar .challenge-box h3 {
+  color: #bc6c25;
+  margin-top: 0;
+}
+.content .sidebar .challenge-box .progress-container {
+  background: #f0f0f0;
+  height: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+.content .sidebar .challenge-box .progress-container .progress-bar {
+  background: #d4a373;
+  width: 75%;
+  height: 100%;
+}
+.content .sidebar .challenge-box .status-text {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.content .main-content {
+  flex: 2;
+}
+.content .main-content h2 {
+  color: #bc6c25;
+  font-size: 1.8rem;
+}
+.content .main-content .feature-list {
+  list-style: none;
+  padding: 0;
+}
+.content .main-content .feature-list li {
+  background: #ffffff;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 8px solid #d4a373;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+.content .main-content .feature-list li:hover {
+  transform: translateX(5px);
+}
+.content .main-content .feature-list li.genre-fantasy {
+  border-color: #a3b18a;
+}
+.content .main-content .feature-list li.genre-thriller {
+  border-color: #283618;
+}
+.content .main-content .feature-list li.genre-romance {
+  border-color: #dda15e;
+}
+
+.large-text {
+  font-size: 1.5rem;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed #d4a373;
+}
+
+.high-contrast-text {
+  background: #283618;
+  color: #fdfaf5;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 0.9rem;
+  color: #d4a373;
+}/*# sourceMappingURL=style.css.map */

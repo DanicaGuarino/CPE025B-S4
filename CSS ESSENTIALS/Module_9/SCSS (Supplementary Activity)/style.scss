@@ -1,0 +1,152 @@
+// --- 1. Variables: Warm & Aesthetic Palette ---
+$cream-bg:    #fdfaf5;   // Soft paper color
+$clay:        #d4a373;   // Muted gold/brown
+$terracotta:  #bc6c25;   // Deep warm orange
+$coffee:      #283618;   // Very dark green/brown for text
+$sage:        #a3b18a;   // Fantasy genre
+$rose:        #dda15e;   // Romance genre
+$white:       #ffffff;
+
+// --- 2. Mixins ---
+@mixin soft-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+// --- 3. Base Styles ---
+body {
+  font-family: 'Optima', 'Georgia', serif;
+  background-color: $cream-bg;
+  color: $coffee;
+  margin: 0;
+  line-height: 1.8;
+}
+
+// --- 4. Layout & Nesting ---
+.header {
+  background-color: $terracotta;
+  color: $cream-bg;
+  padding: 60px 20px;
+  text-align: center;
+  
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 20px;
+  background: $white;
+  margin: 0;
+  border-bottom: 1px solid rgba($clay, 0.2);
+
+  li {
+    margin: 0 20px;
+
+    a {
+      text-decoration: none;
+      color: $terracotta;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: $clay;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  max-width: 1000px;
+  margin: 40px auto;
+  gap: 30px;
+  padding: 0 20px;
+
+  // Sidebar Styling
+  .sidebar {
+    flex: 1;
+    
+    .challenge-box {
+      background: $white;
+      padding: 25px;
+      border-radius: 15px;
+      @include soft-shadow;
+
+      h3 { color: $terracotta; margin-top: 0; }
+
+      .progress-container {
+        background: #f0f0f0;
+        height: 10px;
+        border-radius: 5px;
+        margin: 15px 0;
+        overflow: hidden;
+
+        .progress-bar {
+          background: $clay;
+          width: 75%; 
+          height: 100%;
+        }
+      }
+      .status-text { font-size: 0.85rem; font-style: italic; }
+    }
+  }
+
+  .main-content {
+    flex: 2;
+
+    h2 { color: $terracotta; font-size: 1.8rem; }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: $white;
+        padding: 15px 20px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border-left: 8px solid $clay;
+        @include soft-shadow;
+        transition: transform 0.2s;
+
+        &:hover { transform: translateX(5px); }
+
+        // Genre-specific borders
+        &.genre-fantasy { border-color: $sage; }
+        &.genre-thriller { border-color: $coffee; }
+        &.genre-romance { border-color: $rose; }
+      }
+    }
+  }
+}
+
+// --- 5. Accessibility Styles ---
+.large-text {
+  font-size: 1.5rem;
+  background: $white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed $clay;
+}
+
+.high-contrast-text {
+  background: $coffee;
+  color: $cream-bg;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 0.9rem;
+  color: $clay;
+}

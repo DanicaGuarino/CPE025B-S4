@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        
+        header {
+            background: url('https://edube.org/uploads/media/default/0001/04/products_image.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        
+        footer {
+            background-color: lightgray;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+       
+        .product {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #000;
+            margin: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .product-image {
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        
+        .product-specs {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .product-specs th, 
+        .product-specs td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .product-specs tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .product-specs tr:hover {
+            background-color: #ddd;
+        }
+
+        
+        .contact-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-form form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-form fieldset {
+            border: none;
+        }
+
+        .contact-form legend {
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .contact-form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Products</h1>
+    </header>
+
+    <main>
+        <div class="product">
+            <div class="product-image">
+                <img src="https://edube.org/uploads/media/default/0001/04/product_image.jpg" alt="Product Image">
+                <span class="badge">New</span>
+            </div>
+            <h2>Product Name</h2>
+            <p>Product description goes here. It's a brief overview of the product features.</p>
+        </div>
+
+        <table class="product-specs">
+            <tr>
+                <th>Feature</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>1kg</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>Red</td>
+            </tr>
+            <tr>
+                <td>Material</td>
+                <td>Plastic</td>
+            </tr>
+        </table>
+
+        <div class="contact-form">
+            <form>
+                <fieldset>
+                    <legend>Contact Us</legend>
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Online Store</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Groove Haven | Vinyl Shop</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* MODIFIED: Aesthetic radial gradient to make the black vinyl pop */
+            background: radial-gradient(circle at center, #252525 0%, #121212 100%);
+            color: #e0e0e0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000;
+            padding: 60px 20px;
+            border-bottom: 2px solid #ffcc00;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        header.visible {
+            opacity: 1;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ffcc00; 
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        header p em {
+            color: #bbbbbb;
+            font-size: 1.1rem;
+        }
+
+        /* Introduction & Features Styles */
+        .intro-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto 60px;
+            padding: 0 20px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            border-color: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        .feature-box h3 {
+            color: #ffcc00;
+            margin-top: 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .feature-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #ccc;
+        }
+
+        /* Shop Layout */
+        .shop-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .lp-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 120px;
+        }
+
+        /* Spinning Vinyl Animation */
+        .lp-cover-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .lp-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 2;
+            border: 1px solid #333;
+        }
+
+        .vinyl-disc {
+            position: absolute;
+            top: 5px;
+            right: -40px;
+            width: 310px;
+            height: 310px;
+            /* MODIFIED: Added a linear-gradient "shine" so rotation is clearly visible */
+            background: 
+                linear-gradient(30deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%),
+                repeating-radial-gradient(#111, #111 10%, #222 15%);
+            border-radius: 50%;
+            z-index: 1;
+            animation: rotate 10s infinite linear;
+            border: 1px solid #222;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Content Animation */
+        .lp-info {
+            flex: 1;
+            min-width: 320px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .info-card {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-left: 4px solid #ffcc00;
+            transform: translateX(50px);
+            opacity: 0;
+            animation: slideIn 0.8s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Staggered load for the list */
+        .lp-item:nth-child(1) .info-card { animation-delay: 0.4s; }
+        .lp-item:nth-child(2) .info-card { animation-delay: 0.6s; }
+        .lp-item:nth-child(3) .info-card { animation-delay: 0.8s; }
+        .lp-item:nth-child(4) .info-card { animation-delay: 1.0s; }
+        .lp-item:nth-child(5) .info-card { animation-delay: 1.2s; }
+        .lp-item:nth-child(6) .info-card { animation-delay: 1.4s; }
+        .lp-item:nth-child(7) .info-card { animation-delay: 1.6s; }
+        .lp-item:nth-child(8) .info-card { animation-delay: 1.8s; }
+
+        h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #4CAF50; 
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        mark {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 2px 8px;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .buy-now {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .buy-now:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #000;
+            color: #666;
+            padding: 40px;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('header').classList.add('visible');
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>The Groove Haven</h1>
+        <p><em>Where the music never stops spinning.</em></p>
+    </header>
+
+    <section class="intro-section">
+        <h2>Welcome to every music lover's Haven</h2>
+        <p>At <strong>The Groove Haven</strong>, we believe music is meant to be felt, not just heard. We curate a premium selection of vinyl records ranging from timeless classics to the latest chart-toppers. Whether you're a seasoned audiophile or just starting your collection, we provide the ultimate analog experience for your ears.</p>
+    </section>
+
+    <h2 style="color: #ffcc00; text-transform: uppercase; letter-spacing: 2px;">Features</h2>
+    <section class="features-container">
+        <div class="feature-box">
+            <h3>Audiophile Quality</h3>
+            <p>180-gram heavy-duty wax for the richest sound and minimal surface noise.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Exclusive Variants</h3>
+            <p>Limited edition marbled, translucent, and colored vinyl you won't find anywhere else.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Premium Packaging</h3>
+            <p>Gatefold jackets, high-quality inner sleeves, and lyric booklets included with every LP.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Mastered for Analog</h3>
+            <p>Every record is specifically mastered to ensure the warmest, most authentic soundstage.</p>
+        </div>
+    </section>
+
+    <main class="shop-container">
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://t2.genius.com/unsafe/600x600/https%3A%2F%2Fimages.genius.com%2F6841c216d7c8ab72797450b8c30369e4.1000x1000x1.png" alt="NIKI Nicole" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Nicole</h2>
+                    <p><strong>NIKI</strong> | Indie Pop</p>
+                    <p>The vulnerable and nostalgic sophomore album. A high-school time capsule on wax.</p>
+                    <p class="price">₱2,199.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://t2.genius.com/unsafe/600x600/https%3A%2F%2Fimages.genius.com%2F602f216126a69506d0d9e895ee99ba30.1000x1000x1.png" alt="Avril Lavigne Let Go" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Let Go</h2>
+                    <p><strong>Avril Lavigne</strong> | Pop Punk</p>
+                    <p>The iconic 20th Anniversary Edition. Featuring "Complicated" and "Sk8er Boi."</p>
+                    <p class="price">₱2,899.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Rihanna_-_Loud.png" alt="Rihanna Loud" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Loud</h2>
+                    <p><strong>Rihanna</strong> | Dance-Pop / R&B</p>
+                    <p>The vibrant era of RiRi. This edition comes on stunning Opaque Baby Pink vinyl.</p>
+                    <p class="price">₱2,999.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://static.wikia.nocookie.net/katyperry/images/2/29/Teenage_Dream.jpg" alt="Katy Perry" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Teenage Dream</h2>
+                    <p><strong>Katy Perry</strong> | Pop</p>
+                    <p>The record-breaking album that defined an era. Features peppermint-scented packaging!</p>
+                    <p class="price">₱2,499.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://images.genius.com/6adb3738db699c499d0b7601d3728f0b.1000x1000x1.png" alt="Taylor Swift" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Speak Now (TV)</h2>
+                    <p><strong>Taylor Swift</strong> | Country Pop</p>
+                    <p>Taylor’s third studio album, reimagined on beautiful Violet Marbled Vinyl.</p>
+                    <p class="price">₱3,199.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/4b/Ariana_Grande_-_Dangerous_Woman_%28Official_Album_Cover%29.png" alt="Ariana Grande" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>Dangerous Woman</h2>
+                    <p><strong>Ariana Grande</strong> | R&B</p>
+                    <p>Featuring "Into You." The Gatefold Double LP edition on classic black wax.</p>
+                    <p class="price">₱2,599.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://t2.genius.com/unsafe/600x600/https%3A%2F%2Fimages.genius.com%2F6ecbc2e64e62b35ee2fadf8532056f72.1000x1000x1.png" alt="Sabrina Carpenter" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <mark>★ BESTSELLER ★</mark>
+                    <h2>Short n' Sweet</h2>
+                    <p><strong>Sabrina Carpenter</strong> | Pop</p>
+                    <p>The 2024 sensation on Limited Edition Sky Blue Vinyl. A sugary-sweet addition.</p>
+                    <p class="price">₱2,499.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lp-item">
+            <div class="lp-cover-wrapper">
+                <img src="https://t2.genius.com/unsafe/600x600/https%3A%2F%2Fimages.genius.com%2Fcde31e780d76c90305bc02d73bf4640b.1000x1000x1.png" alt="SZA" class="lp-image">
+                <div class="vinyl-disc"></div>
+            </div>
+            <div class="lp-info">
+                <div class="info-card">
+                    <h2>SOS</h2>
+                    <p><strong>SZA</strong> | Soul</p>
+                    <p>The record-breaking second studio album. A masterpiece of modern storytelling.</p>
+                    <p class="price">₱2,599.00 PHP</p>
+                    <button class="buy-now">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 The Groove Haven | Vinyl Shop</p>
+    </footer>
+
+</body>
+</html>

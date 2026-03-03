@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover Your World</title>
+    <link rel="icon" href="https://edube.org/uploads/media/default/0001/04/web-favicon.png" type="image/png">
+    
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #e0f2f1 0%, #e8eaf6 100%);
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #1a237e; 
+            text-align: center;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            color: #546e7a;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        
+        .map-container {
+            text-align: center;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #fff;
+        }
+
+        
+        #discoverLocation {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(to right, #43a047, #1b5e20); 
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(27, 94, 32, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #discoverLocation:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(27, 94, 32, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Table Design */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #1a237e;
+            color: #ffffff;
+            padding: 18px;
+            text-align: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            color: #455a64;
+            font-weight: 500;
+        }
+
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+
+        tbody tr:hover {
+            background-color: #e3f2fd; 
+            transition: background-color 0.2s;
+        }
+
+        /* Design for continent names */
+        td:first-child {
+            color: #1a237e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Discover Your World &#x1F30D</h1> 
+    <p>Every corner of our planet tells a story. From the icy peaks of the Himalayas to the lush basin of the Amazon, click the map to unlock the secrets of each continent.</p>
+    
+    <div class="map-container">
+        <img src="https://edube.org/uploads/media/default/0001/04/continents.jpg" usemap="#image-map" alt="World Map">
+    </div>
+
+    <button id="discoverLocation">📍 Discover Location</button>
+
+    <map name="image-map">
+        <area target="" alt="North America" title="North America" id="north-america" coords="386,283,41,17" shape="rect" href="javascript:void(0);">
+        <area target="" alt="South America" title="South America" id="south-america" coords="209,501,358,288" shape="rect" href="javascript:void(0);">
+        <area target="" alt="Europe" title="Europe" id="europe" coords="391,68,505,217" shape="rect" href="javascript:void(0);">
+        <area target="" alt="Africa" title="Africa" id="africa" coords="533,217,387,448" shape="rect" href="javascript:void(0);">
+        <area target="" alt="Asia" title="Asia" id="asia" coords="893,153,506,1" shape="rect" href="javascript:void(0);">
+        <area target="" alt="Australia and Oceania" title="Australia and Oceania" id="australia-and-oceania" coords="679,353,872,480" shape="rect" href="javascript:void(0);">
+    </map>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Continent</th>
+                <th>Area (km²)</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Asia</td>
+                <td>44,579,000</td>
+                <td>4.6 Billion</td>
+            </tr>
+            <tr>
+                <td>Africa</td>
+                <td>30,370,000</td>
+                <td>1.3 Billion</td>
+            </tr>
+            <tr>
+                <td>North America</td>
+                <td>24,709,000</td>
+                <td>579 Million</td>
+            </tr>
+            <tr>
+                <td>South America</td>
+                <td>17,840,000</td>
+                <td>423 Million</td>
+            </tr>
+            <tr>
+                <td>Europe</td>
+                <td>10,180,000</td>
+                <td>746 Million</td>
+            </tr>
+            <tr>
+                <td>Australia/Oceania</td>
+                <td>8,600,000</td>
+                <td>43 Million</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const continentInfo = {
+        'north-america': {
+          continent: 'North America',
+          river: 'Mississippi River',
+          mountain: 'Denali',
+          landmarks: 'Grand Canyon, Statue of Liberty, Niagara Falls'
+        },
+        'south-america': {
+          continent: 'South America',
+          river: 'Amazon River',
+          mountain: 'Aconcagua',
+          landmarks: 'Machu Picchu, Galapagos Islands'
+        },
+        'europe': {
+          continent: 'Europe',
+          river: 'Danube River',
+          mountain: 'Mont Blanc',
+          landmarks: 'Eiffel Tower, Colosseum, Acropolis of Athens'
+        },
+        'africa': {
+          continent: 'Africa',
+          river: 'Nile River',
+          mountain: 'Mount Kilimanjaro',
+          landmarks: 'Sphinx, Table Mountain'
+        },
+        'asia': {
+          continent: 'Asia',
+          river: 'Yangtze River',
+          mountain: 'Mount Everest',
+          landmarks: 'Great Wall of China, Petra'
+        },
+        'australia-and-oceania': {
+          continent: 'Australia and Oceania',
+          river: 'Murray River',
+          mountain: 'Mount Kosciuszko',
+          landmarks: 'Sydney Opera House, Great Barrier Reef, Uluru'
+        }
+      };
+
+      function displayContinentInfo(continentId) {
+        const info = continentInfo[continentId];
+        if (info) {
+          alert(`Continent: ${info.continent}\nRiver: ${info.river}\nMountain: ${info.mountain}\nLandmarks: ${info.landmarks}`);
+        } else {
+          alert('Information not available');
+        }
+      }
+
+      document.querySelectorAll('area').forEach(area => {
+        area.addEventListener('click', function() {
+          const continentId = this.id;
+          displayContinentInfo(continentId);
+        });
+      });
+
+      const discoverLocationButton = document.getElementById('discoverLocation');
+      
+      discoverLocationButton.addEventListener('click', () => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const continentId = determineContinentByGeo(latitude, longitude);
+            if (continentId) displayContinentInfo(continentId);
+          }, (error) => {
+            alert("Error obtaining geolocation: " + error.message);
+          });
+        } else {
+          alert("Geolocation is not supported by your browser.");
+        }
+      });
+
+      function determineContinentByGeo(latitude, longitude) {
+        if (latitude > 35 && longitude > -10 && longitude < 40) {
+          return 'europe';
+        } else if (latitude < 0 && longitude > -80 && longitude < -34) {
+          return 'south-america';
+        } else if (latitude > 0 && longitude > -130 && longitude < -70) {
+          return 'north-america';
+        } else if (latitude > 5 && latitude < 60 && longitude > 40 && longitude < 180) {
+          return 'asia';
+        } else if (latitude > -35 && latitude < 35 && longitude > 10 && longitude < 50) {
+          return 'africa';
+        } else if (latitude < -10 && longitude > 110 && longitude < 180) {
+          return 'australia-and-oceania';
+        }
+        alert("Continent could not be determined based on your location.");
+        return null; 
+      }
+    });
+    </script>
+</body>
+</html>

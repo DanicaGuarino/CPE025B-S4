@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guariño - Prelim Skills Exam</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0ebf8; 
+            color: #202124;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        
+        #survey-form {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 10px solid #673ab7; 
+        }
+
+        #title, #description {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        input + p {
+            font-size: 0.85rem;
+            color: #70757a;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        /* Button Design */
+        #submit {
+            background-color: #673ab7;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        #submit:hover {
+            background-color: #512da8;
+        }
+
+        /* Spacing for the Radio/Checkbox groups */
+        label {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Intramurals Event Survey Form</h1>
+    <p id="description">This survey collects feedback from students who participated in the Intramurals Event held at Mater Carmeli School of Novaliches Quezon City.</p>
+    
+    <form id="survey-form" action="/submit_survey" method="post">
+        
+     <!--Input Fields and Validations-->
+
+        <p>Please fill out the form below:</p>
+
+        <!--Full Name-->
+        <label id="name-label" for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        <p>Enter your full name (e.g., Angel Mae Barroga).</p>
+
+        <!--Email Adress-->
+        <label id="email-label" for="email">School Email Address:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your school email address" required>
+        <p>Enter your email address (e.g., angelmaebarroga@tip.edu.ph).</p>
+
+        <!--Year Level-->
+        <label id="number-label" for="number">Year Level:</label><br>
+        <input type="number" id="number" name="yearLevel" placeholder="Enter your current year level (1-4)" required min="1" max="4">
+        <p>Enter your current year level (1-4)</p>
+
+    <!--Selection and Submission Controls-->
+
+         <!--Sports Selection-->
+        <label id="sports-label" for="dropdown">Main Sport of Interest:</label><br>
+        <select id="dropdown" name="sports" required>
+            <option value="" disabled selected>Select sports</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Volleyball">Volleyball</option>
+            <option value="Badminton">Badminton</option>
+        </select><br><br>
+        
+        <!--Event Attendance-->
+        <label>Event Attendance:</label><br>
+        <input type="radio" id="attended" name="attendance" value="attended">
+        <label for="attended">Attended</label><br>
+        <input type="radio" id="didNotAttend" name="attendance" value="didNotAttend">
+        <label for="didNotAttend">Did Not Attend</label><br><br>
+        
+        <!--Activities Watched-->
+        <label>What activities did you watch? (Select all that apply):</label><br>
+        <input type="checkbox" name="watched" value="opening" id="opening">
+        <label for="opening">Opening Ceremony</label><br>
+        <input type="checkbox" name="watched" value="ballgames" id="ballgames">
+        <label for="ballgames">Ball Games</label><br>
+        <input type="checkbox" name="watched" value="closing" id="closing">
+        <label for="closing">Closing Ceremony</label><br><br>
+
+        <!--Questions-->
+        <p> Did you find the event enjoyable?</p>
+        <input type="radio" id="enjoyableYes" name="enjoyable" value="yes" required>
+        <label for="enjoyableYes">Yes</label><br> 
+        <input type="radio" id="enjoyableNo" name="enjoyable" value="no" required>
+        <label for="enjoyableNo">No</label><br><br>
+
+        <p> Is the time alloted sufficient for the event? </p>
+        <input type="radio" id="sufficientYes" name="sufficient" value="yes" required>
+        <label for="sufficientYes">Yes</label><br> 
+        <input type="radio" id="sufficientNo" name="sufficient" value="no" required>
+        <label for="sufficientNo">No</label><br><br>
+
+        <p> Is the event organized properly? </p>
+        <input type="radio" id="organizedYes" name="organized" value="yes" required>
+        <label for="organizedYes">Yes</label><br> 
+        <input type="radio" id="organizedNo" name="organized" value="no" required>
+        <label for="organizedNo">No</label><br><br>
+
+        <p> Did you receive adequate information about the event?</p>
+        <input type="radio" id="infoYes" name="info" value="yes" required>
+        <label for="infoYes">Yes</label><br> 
+        <input type="radio" id="infoNo" name="info" value="no" required>
+        <label for="infoNo">No</label><br><br>
+
+        <p> Did you experience any issues during the event?</p>
+        <input type="radio" id="issuesYes" name="issues" value="yes" required>
+        <label for="issuesYes">Yes</label><br> 
+        <input type="radio" id="issuesNo" name="issues" value="no" required>
+        <label for="issuesNo">No</label><br><br>
+
+        <p> Are you satisfied with the event?</p>
+         <input type="radio" id="organizedYes" name="organized" value="yes" required>
+        <label for="organizedYes">Yes</label><br> 
+        <input type="radio" id="organizedNo" name="organized" value="no" required>
+        <label for="organizedNo">No</label><br><br>
+
+
+        <p> Are you willing to participate in future events?</p>
+         <input type="radio" id="willingYes" name="willing" value="yes" required>
+        <label for="willingYes">Yes</label><br> 
+        <input type="radio" id="willingNo" name="willing" value="no" required>
+        <label for="willingNo">No</label><br><br>
+
+        <!--Feedback on Event Organization-->
+        <label id="feedback-label" for="feedback">Feedback on Event Organization:</label><br>
+        <textarea id="feedback" name="feedback" placeholder="Enter your feedback here" rows="4" cols="50"></textarea><br><br>
+        
+        <!--Submit Button-->
+        <button type="submit" id="submit">Submit</button>
+
+    </form> 
+</body>
+</html>

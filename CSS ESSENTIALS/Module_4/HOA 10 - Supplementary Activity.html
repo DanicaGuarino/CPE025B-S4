@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Personalities | Breed Guide</title>
+    <style>
+
+        /* ================= THE CSS PART ======================== */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #fdfbf7; 
+            color: #443e38;
+            line-height: 1.6;
+        }
+
+        
+        .hero {
+            background: linear-gradient(135deg, #e67e22, #d35400); 
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(211, 84, 0, 0.3);
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: clamp(32px, 5vw, 50px); margin-bottom: 10px; }
+        .hero h2 { font-size: clamp(18px, 3vw, 24px); font-weight: 400; opacity: 0.9; }
+
+       
+        .featured { width: 90%; margin: 30px auto; }
+
+        .column {
+            float: left;
+            width: 30%;
+            margin: 1.66%;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            border-bottom: 5px solid #e67e22;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .column:hover { transform: translateY(-5px); }
+        .column h3 { color: #d35400; margin-bottom: 10px; }
+
+        .clearfix::after { content: ""; display: table; clear: both; }
+
+        /* For the pet grid */
+        .pet-grid {
+            width: 90%;
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .post-card {
+            flex: 0 0 31%;      
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* This is for the badges or labels for each pet */
+        .badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+        .badge.dog { background-color: #e74c3c; }
+        .badge.cat { background-color: #3498db; }
+        .badge.small { background-color: #27ae60; }
+
+        /* This is for the table */
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+        th { color: #d35400; background: #fff8f0; }
+
+        /* This is for the voting section*/
+        .vote-section { background-color: #fff8f0; padding: 60px 20px; text-align: center; }
+        form { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0 20px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+        button { background-color: #e67e22; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; transition: background 0.3s; }
+        button:hover { background-color: #d35400; }
+
+        footer { text-align: center; padding: 40px; background: #443e38; color: #fff; }
+
+        @media (max-width: 900px) { .post-card, .column { flex: 0 0 48%; width: 46%; } }
+        @media (max-width: 600px) { .post-card, .column { flex: 0 0 100%; width: 100%; } }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-text">
+        <h1>Paws & Personalities 🐾</h1>
+        <h2>Choosing the Perfect Companion</h2>
+        <p>Expert local guide for the Shih Tzu, Birman, and Robo Hamster.</p>
+    </div>
+</header>
+
+<section class="featured clearfix">
+    <div class="column">
+        <h3>The Shih Tzu 🐶</h3>
+        <p>A favorite in Filipino households, these "Lion Dogs" are affectionate, hypoallergenic, and perfect for indoor living.</p>
+    </div>
+    <div class="column">
+        <h3>The Birman 🐱</h3>
+        <p>The "Sacred Cat of Burma" is a blue-eyed beauty known for its gentle nature, silky fur, and distinctive white "gloves" on its paws.</p>
+    </div>
+    <div class="column">
+        <h3>The Roborovski Dwarf Hamster 🐹</h3>
+        <p>The smallest and fastest of all dwarf hamsters, "Robos" are energetic, sand-loving, and incredibly fun to observe.</p>
+    </div>
+</section>
+
+<section class="pet-grid">
+    <article class="post-card">
+        <span class="badge dog">Hypoallergenic</span>
+        <img src="https://wallpapercave.com/wp/wp2333155.jpg" alt="Shih Tzu">
+        <h3>Shih Tzu</h3>
+        <p>A sturdy, lively, and alert toy dog that loves following their owners from room to room.</p>
+        <table>
+            <tr><th>Metric</th><th>Details</th></tr>
+            <tr><td>Monthly Cost</td><td>₱1,500 - ₱3,500</td></tr>
+            <tr><td>Attention</td><td>High (Grooming)</td></tr>
+            <tr><td>Lifespan</td><td>10-18 Years</td></tr>
+        </table>
+    </article>
+
+    <article class="post-card">
+        <span class="badge cat">Gentle Soul</span>
+        <img src="https://fishsubsidy.org/wp-content/uploads/2020/01/birman-cat.jpg" alt="Birman Cat">
+        <h3>Birman</h3>
+        <p>Soft-spoken and affectionate, Birmans are social cats that get along well with other pets and children.</p>
+        <table>
+            <tr><th>Metric</th><th>Details</th></tr>
+            <tr><td>Monthly Cost</td><td>₱1,200 - ₱2,500</td></tr>
+            <tr><td>Attention</td><td>Moderate</td></tr>
+            <tr><td>Lifespan</td><td>12-16 Years</td></tr>
+        </table>
+    </article>
+
+    <article class="post-card">
+        <span class="badge small">High Energy</span>
+        <img src="https://a-z-animals.com/media/2022/12/iStock-1157798585.jpg" alt="Roborovski Dwarf Hamster">
+        <h3>Roborovski Dwarf</h3>
+        <p>Extraordinarily fast and shy, these tiny hamsters thrive in large enclosures with plenty of sand and wheels.</p>
+        <table>
+            <tr><th>Metric</th><th>Details</th></tr>
+            <tr><td>Monthly Cost</td><td>₱400 - ₱900</td></tr>
+            <tr><td>Attention</td><td>Low (Observation Pet)</td></tr>
+            <tr><td>Lifespan</td><td>2-3 Years</td></tr>
+        </table>
+    </article>
+</section>
+
+<section class="vote-section">
+    <form>
+        <h2>Community Vote</h2>
+        <p style="margin-bottom: 20px;">Which of these three would you bring home today?</p>
+        
+        <label for="choice">Choose your favorite:</label>
+        <input type="text" id="choice" placeholder="Shih Tzu, Birman, or Robo Hamster?">
+
+        <label for="reason">Why is this your pick?</label>
+        <textarea id="reason" placeholder="Write your reason here..."></textarea>
+
+        <button type="submit">Submit My Vote</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Paws & Personalities PH | Happy Pets, Happy Homes</p>
+</footer>
+
+</body>
+</html>

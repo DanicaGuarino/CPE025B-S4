@@ -23,27 +23,25 @@ const rl = readline.createInterface({
 
 // This is for the user input and adding a new contact to the list
 rl.question("Enter name: ", (name) => {
-    rl.question("Enter phone: ", (phone) => {
-        rl.question("Enter email: ", (email) => {
+rl.question("Enter phone: ", (phone) => {
+rl.question("Enter email: ", (email) => {
 
-            // This is for adding the new contact to the list
-            contacts.push({
-                name,
-                phone,
-                email
-            });
+// This is for adding the new contact to the list
+contacts.push({name, phone,email});
 
-            let last = contacts.length - 1;
+ last = contacts.length - 1;
 
-            // This is for displaying the first and last contact in the list (MY OUTPUT)
-            console.log("\nFirst Contact:");
-            console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
+// This is for displaying the first and last contact in the list (MY OUTPUT)
+console.log("\nFirst Contact:");
+console.log(`${contacts[0].name} / ${contacts[0].phone} / ${contacts[0].email}`);
 
-            console.log("\nLast Contact:");
-            console.log(`${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`);
-            // End of my output
+console.log("\nLast Contact:");
+console.log(`${contacts[last].name} / ${contacts[last].phone} / ${contacts[last].email}`);
+// End of my output
 
-            rl.close();
-        });
-    });
+rl.close();
+     });
+  });
+
 });
+

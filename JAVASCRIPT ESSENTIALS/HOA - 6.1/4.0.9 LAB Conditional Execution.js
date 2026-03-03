@@ -50,7 +50,9 @@ rl.question("Choose an action: first / last / new\n", function(action) {
         let last = contacts[contacts.length - 1];
         console.log(`New Contact Added: ${last.name} / ${last.phone} / ${last.email}`);} else {
         console.log("Error: All fields are required. Contact was not added.");}
+        
         rl.close();
+        
                 });
             });
         });
@@ -58,6 +60,7 @@ rl.question("Choose an action: first / last / new\n", function(action) {
         // This is for handling invalid action input from the user (MY OUTPUT)
     } else {
         console.log("Invalid action. Please enter first, last, or new.");
+        
         rl.close();
     }
     

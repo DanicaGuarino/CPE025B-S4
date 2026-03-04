@@ -10,11 +10,12 @@ teamDirectory.push({
     name: "Casey Moore", 
     role: "QA Engineer", 
     skills: ["Testing", "Debugging"], 
-    available: true 
-});
+    available: true });
 
 // I updated the availability status of one of the team members
 teamDirectory[1].available = true;
+
+
 
 // I accessed and printed specific information about the team members
 console.log(teamDirectory[0].name + " - First Skill: " + teamDirectory[0].skills[0]);

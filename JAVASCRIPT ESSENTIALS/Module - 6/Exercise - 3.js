@@ -1,4 +1,4 @@
-
+// This function takes an array of numbers as input and returns the maximum value in the array.
 function max(array) { 
     let maxValue = array[1]; 
     for(let i=1; i  < array.length; i++) {

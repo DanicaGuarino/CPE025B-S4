@@ -1,3 +1,5 @@
+// This is a for loop that calculates the factorial of a number (in this case, 10) and prints the intermediate results at each step. 
+// The final result will be the factorial of 10, which is 3628800.
 let counter = 0; 
 let maxValue = 10; 
 let result = 1; 
